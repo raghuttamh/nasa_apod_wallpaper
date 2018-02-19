@@ -1,4 +1,5 @@
 #py_file
+#Only for Linux
 import json
 import urllib
 import os
