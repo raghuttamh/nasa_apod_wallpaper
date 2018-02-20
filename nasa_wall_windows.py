@@ -8,7 +8,12 @@ import urllib
 import json
 url = urllib.urlopen("https://api.nasa.gov/planetary/apod?api_key=ScYKcOs02qj066LcwbxMfb5U5m5B64l0scazFTC9")
 urlj = json.load(url)
-urllib.urlretrieve(urlj['hdurl'],"C:/Users/dell/Desktop/image.jpg")
+if urlj['media_type'] == 'image':
+	urllib.urlretrieve(urlj['hdurl'],'C:/Users/dell/Desktop/image.jpg')
+	#where "/home/raghuttam/apod_img" the image path.. that might change for each system
+else:
+	print("The image is unavailable today as the server has uploaded a "+urlj['media_type'])
+
 
 
 
