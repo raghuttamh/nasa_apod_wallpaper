@@ -11,6 +11,7 @@ urlj = json.load(url)
 if urlj['media_type'] == 'image':
 	urllib.urlretrieve(urlj['hdurl'],'/home/raghuttam/apod_img.jpg')
 	#where "/home/raghuttam/apod_img" the image path.. that might change for each system
+	print(urlj['title'])
 else:
 	print("The image is unavailable today as the server has uploaded a "+urlj['media_type'])
 
