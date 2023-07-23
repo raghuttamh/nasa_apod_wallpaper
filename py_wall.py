@@ -1,11 +1,13 @@
 #py_file
 #Only for Linux
 import json
-import urllib
+import urllib.request
 import os
 
 os.system('export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/')
-url = urllib.urlopen('https://api.nasa.gov/planetary/apod?api_key=LBzdGVRkhVayk4DL6sxLtUuBv0gc1cy0goHcvLNz')
+
+#with urllib.request.urlopen("http://www.python.org") as url:
+url = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?api_key=guvojFkM3uqbvnSTlidKDlMhGY1g3QeiNQkXn19G')
 urlj = json.load(url)
 
 if urlj['media_type'] == 'image':
