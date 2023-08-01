@@ -11,7 +11,7 @@ url = urllib.request.urlopen('https://api.nasa.gov/planetary/apod?api_key=guvojF
 urlj = json.load(url)
 
 if urlj['media_type'] == 'image':
-	urllib.urlretrieve(urlj['hdurl'],'/home/raghuttam/apod_img.jpg')
+	urllib.request.urlretrieve(urlj['hdurl'],'/home/raghuttam/apod_img.jpg')
 	#where "/home/raghuttam/apod_img" the image path.. that might change for each system
 	print(urlj['title'])
 else:
